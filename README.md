@@ -71,7 +71,7 @@ Because HTML's text syntax is neutral, you will rarely need to disable highlight
 ```
 ### Disable multi-line syntax with the `no-html` directive
 ```js
-const ignoreMultiLine = /*no-html*/ `    
+const ignoreMultiLine = /*no-html*/`    
     {"menu": {
         "id": "file",
         "value": "File",

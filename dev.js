@@ -48,7 +48,7 @@ const startingComment = /*html*/ `
 const ignoreSingleLine = `<span class="some-class">Have Some Class! //</span>`//
 
 // Disable multi-line syntax highlighting with the no-html directive
-const ignoreMultiLine = /*no-html*/ `    
+const ignoreMultiLine = /*no-html*/`    
     {"menu": {
         "id": "file",
         "value": "File",
