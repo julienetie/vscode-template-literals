@@ -1,4 +1,3 @@
-
 /* 
 To enable syntax highlighting a template literal needs to be assigned or returned */
 
@@ -72,4 +71,4 @@ const ignoreMultiLine = /*no-html*/ `
 
 // Direct arguments are not supported (TBA)
 const someFunction = () => {}
-someFunction(`<article></article>`, 1,2,3)
+someFunction(`<article></article>`)

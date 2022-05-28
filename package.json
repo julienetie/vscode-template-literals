@@ -1,6 +1,6 @@
 {
     "publisher": "julienetie",
-    "name": "templit",
+    "name": "vscode-template-literals",
     "displayName": "Template Literals",
     "description": "Template Literals Syntax Highlighting for HTML and SVG (Without the need of a tag function)",
     "version": "0.1.0",
