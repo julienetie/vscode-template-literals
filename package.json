@@ -1,0 +1,81 @@
+{
+    "publisher": "julienetie",
+    "name": "templit",
+    "displayName": "Template Literals",
+    "description": "Template Literals Syntax Highlighting for HTML and SVG (Without the need of a tag function)",
+    "version": "0.1.0",
+    "icon": "docs/logo.png",
+    "scripts": {
+        "publish": "vsce publish"
+    },
+    "galleryBanner": {
+        "color": "#a099ff",
+        "theme": "light"
+    },
+    "repository": {
+        "url": "https://github.com/julienetie/template-literals.git"
+    },
+    "bugs": {
+        "url": "https://github.com/julienetie/template-literals.git/issues"
+    },
+    "engines": {
+        "vscode": "^1.52.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "keywords": [
+        "template",
+        "literal",
+        "string",
+        "html",
+        "svg",
+        "highlight",
+        "highlighter",
+        "highlighting",
+        "syntax",
+        "javascript"
+    ],
+    "contributes": {
+        "grammars": [
+            {
+                "injectTo": [
+                    "source.js",
+                    "source.js.jsx",
+                    "source.jsx",
+                    "source.ts",
+                    "source.tsx",
+                    "text.html.basic"
+                ],
+                "scopeName": "inline.lit-html",
+                "path": "./syntaxes/template-literals.json",
+                "embeddedLanguages": {
+                    "meta.embedded.block.html": "html"
+                }
+            },
+            {
+                "injectTo": [
+                    "source.js",
+                    "source.js.jsx",
+                    "source.jsx",
+                    "source.ts",
+                    "source.tsx",
+                    "text.html.basic"
+                ],
+                "scopeName": "inline.lit-html.string.injection",
+                "path": "./syntaxes/template-literals-string-injection.json",
+                "embeddedLanguages": {
+                    "meta.template.expression.ts": "typescript"
+                }
+            }
+        ],
+        "typescriptServerPlugins": [
+            {
+                "name": "typescript-lit-html-plugin"
+            }
+        ]
+    },
+    "dependencies": {
+        "typescript-lit-html-plugin": "0.9.0"
+    }
+}
