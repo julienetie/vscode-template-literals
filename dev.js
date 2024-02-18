@@ -1,33 +1,22 @@
 /* 
-To enable syntax highlighting a template literal needs to be assigned or returned */
+To enabld syntax highlighting you need a tag function or a pass-though tag function */
 
-// Assigned
-const assigned = `
-    <div class="some-class">
-        <style>h1{color: lime;}</style>
-        <h1>Hello World!</h1>
-        <script>console.log('Hello World')</script>
-    </div>
-`
-const property = {
-    templateLiteral: `
-        <div class="some-class">
-            <style>h1{color: lime;}</style>
-            <h1>Hello World!</h1>
-            <script>console.log('Hello World')</script>
-        </div>`
-}
+// Example pass-through function
+const tag = (strings, ...values) => {
+    let result = '';
+  
+    for (let i = 0; i < strings.length; i++) {
+        result += strings[i]
+        if (i < values.length) result += values[i]
+    }
+    return result
+  }
 
-// Returned 
-const returned = () => {
-    return `
-        <div class="some-class">
-            <h1>Hello World!</h1>
-        </div>`
-}
+const _ = tag
+const html = tag
 
-// Wtih tag function 
-const tagged = html `
+
+_`
     <div class="some-class">
         <style>h1{color: lime;}</style>
         <h1>Hello World!</h1>
@@ -35,8 +24,7 @@ const tagged = html `
     </div>
 `
 
-// With starting comments
-const startingComment = /*html*/ `
+html`
     <div class="some-class">
         <style>h1{color: lime;}</style>
         <h1>Hello World!</h1>
@@ -44,31 +32,8 @@ const startingComment = /*html*/ `
     </div>
 `
 
-// Disable single line syntax highlighting by trailing a single line comment
-const ignoreSingleLine = `<span class="some-class">Have Some Class! //</span>`//
-
-// Disable multi-line syntax highlighting with the no-html directive
-const ignoreMultiLine = /*no-html*/`    
-    {"menu": {
-        "id": "file",
-        "value": "File",
-        "popup": {
-        "menuitem": [
-            {"value": "New", "onclick": "CreateNewDoc()"},
-            {"value": "Open", "onclick": "OpenDoc()"},
-            {"value": "Close", "onclick": "CloseDoc()"}
-        ]
-        }
-    }}
+svg`
+<svg id = "svgelem" width = "300" height = "300" xmlns = "http://www.w3.org/2000/svg">
+    <polygon points="100,10 40,180 190,60 10,60 160,180" fill="blue"/>
+</svg>
 `
-
-// Standalone template literals are not supported 
-`<div class="some-class">
-    <style>h1{color: lime;}</style>
-    <h1>Hello World!</h1>
-    <script>console.log('Hello World')</script>
-</div>`
-
-// Direct arguments are not supported (TBA)
-const someFunction = () => {}
-someFunction(`<article></article>`)
