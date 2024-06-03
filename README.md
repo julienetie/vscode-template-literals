@@ -1,40 +1,20 @@
 # Template Literals
+<a href="https://github.com/julienetie/lambdascript">
+<img src="https://github.com/julienetie/vscode-template-literals/assets/7676299/00517d77-04a1-43ae-adeb-2da75c4291cf" width="180">
+</a>
+
 ## The VS Code Syntax Highlighter for using HTML and SVG in [Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 
-Use this extension to highlight markup used within template-literals **without the need to specify a tag function**.
+Use this extension to highlight markup within template literals **without needing to specify a tag function**.
 
-### From 
-```js
-... => `<h1 class="greeting" style="background: lime;">Hello ${place}</h1>` 
-```
-### To
-```html
-... => _`<h1 class="greeting" style="background: lime;">Hello ${place}</h1>`
-```
-## Usage
-You need to use a tag function or pass-though tag function to enable highlighting
-```js
-const tag = (strings, ...values) => {
-  let result = '';
+![image](https://github.com/julienetie/vscode-template-literals/assets/7676299/262d78b3-4381-441c-9803-10fb5adfe340)
 
-  for (let i = 0; i < strings.length; i++) {
-      result += strings[i]
-      if (i < values.length) result += values[i]
-  }
-  return result
-}
-
-const _ = tag
-const html = tag
-const svg = tag
-```
 
 ## Install
 Search for "template literals" in [VSCode extensions](https://marketplace.visualstudio.com/) and [install](https://code.visualstudio.com/learn/get-started/extensions).
 
----
-This plugin is based on the [lit-html](https://github.com/mjbvz/vscode-lit-html) and [Literally HTML](https://github.com/WebReflection/vscode-literally-html) VS Code extensions.
+This plugin is based on the [leet-html](https://github.com/swindex/leet-html) by [Eldar Gerfanov](https://github.com/swindex)
 
 ### ** Contributions are welcomed **
 
-MIT © 2024 Julien Etienne.
+MIT © 2024 LambdaScript, Julien Etienne.
