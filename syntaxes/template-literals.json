@@ -1,50 +1,216 @@
 {
-    "fileTypes": [
-      
-    ],
-    "injectionSelector": "L:source.js -comment -(string -meta.embedded), L:source.jsx -comment -(string -meta.embedded),  L:source.js.jsx -comment -(string -meta.embedded), L:source.ts -comment -(string -meta.embedded), L:source.php -comment -(string -meta.embedded), L:source.tsx -comment -(string -meta.embedded)",
-    "injections": {
-      "L:source": {
-        "patterns": [
-          {
-            "match": "<",
-            "name": "invalid.illegal.bad-angle-bracket.html"
-          }
-        ]
-      }
+  "fileTypes": [
+    "js",
+    "jsx",
+    "ts",
+    "tsx",
+    "html"
+  ],
+  "injectionSelector": "L:source.js -comment -string, L:source.js -comment -string, L:source.jsx -comment -string,  L:source.js.jsx -comment -string, L:source.ts -comment -string, L:source.tsx -comment -string",
+  "injections": {
+    "L:source": {
+      "patterns": [
+        {
+          "match": "<",
+          "name": "invalid.illegal.bad-angle-bracket.html"
+        }
+      ]
+    }
+  },
+  "patterns": [
+    {
+      "begin": "(\\=)\\s*(`)",
+      "beginCaptures": {
+				"1": {
+					"name": "keyword.operator.assignment.js"
+        }
+      },
+      "end": "(`)",
+      "patterns": [
+        {
+          "include": "source.ts#template-substitution-element"
+        },
+        {
+          "include": "text.html.basic"
+        }
+      ]
     },
-    "patterns": [
-      {
-        "name": "string.js.taggedTemplate",
-        "contentName": "meta.embedded.block.html",
-        
-        "begin": "(?x)(\\b(?:\\w+\\.)*(?:html|svg|_)\\s*)(`)",
-        "beginCaptures": {
-          "1": {
-            "name": "entity.name.function.tagged-template.js"
-          },
-          "2": {
-            "name": "punctuation.definition.string.template.begin.js"
-          }
+
+    {
+      "begin": "(\\+=)\\s*(`)",
+      "beginCaptures": {
+				"1": {
+					"name": "keyword.operator.assignment.compound.js"
+        }
+      },
+      "end": "(`)",
+      "patterns": [
+        {
+          "include": "source.ts#template-substitution-element"
         },
-        "end": "(`)",
-        "endCaptures": {
-          "0": {
-            "name": "string.js"
-          },
-          "1": {
-            "name": "punctuation.definition.string.template.end.js"
-          }
+        {
+          "include": "text.html.basic"
+        }
+      ]
+    },   
+    {
+      "begin": "(\\=>)\\s*(`)",
+      "beginCaptures": {
+				"1": {
+					"name": "keyword.operator.assignment.js"
+        }
+      },
+      "end": "(`)",
+      "patterns": [
+        {
+          "include": "source.ts#template-substitution-element"
         },
-        "patterns": [
-          {
-            "include": "source.ts#template-substitution-element"
-          },
-          {
-            "include": "text.html.basic"
-          }
-        ]
-      }
-    ],
-    "scopeName": "inline.lit-html"
-  }
+        {
+          "include": "text.html.basic"
+        }
+      ]
+    },
+
+    {
+      "begin": "(\\+=>)\\s*(`)",
+      "beginCaptures": {
+				"1": {
+					"name": "keyword.operator.assignment.compound.js"
+        }
+      },
+      "end": "(`)",
+      "patterns": [
+        {
+          "include": "source.ts#template-substitution-element"
+        },
+        {
+          "include": "text.html.basic"
+        }
+      ]
+    },
+    {
+      "begin": "(\\+)\\s*(`)",
+      "beginCaptures": {
+				"1": {
+					"name": "keyword.operator.arithmetic.js"
+        }
+      },
+      "end": "(`)",
+      "patterns": [
+        {
+          "include": "source.ts#template-substitution-element"
+        },
+        {
+          "include": "text.html.basic"
+        }
+      ]
+    },
+
+    {
+      "begin": "(\\,)\\s*(`)",
+      "beginCaptures": {
+				"1": {
+					"name": "keyword.operator.arithmetic.js"
+        }
+      },
+      "end": "(`)",
+      "patterns": [
+        {
+          "include": "source.ts#template-substitution-element"
+        },
+        {
+          "include": "text.html.basic"
+        }
+      ]
+    },
+
+       
+    {
+      "begin": "(\\?|\\:)\\s*(`)",
+      "beginCaptures": {
+				"1": {
+					"name": "keyword.operator.ternary.js"
+        }
+      },
+      "end": "(`)",
+      "patterns": [
+        {
+          "include": "source.ts#template-substitution-element"
+        },
+        {
+          "include": "text.html.basic"
+        }
+      ]
+    },
+
+    {
+      "begin": "(\\/\\*html\\*\\/)\\s*(`)",
+      "beginCaptures": {
+				"1": {
+          "name": "comment.block.js"
+        }
+      },
+      "end": "(`)",
+      "patterns": [
+        {
+          "include": "source.ts#template-substitution-element"
+        },
+        {
+          "include": "text.html.basic"
+        }
+      ]
+    },
+    {
+      "begin": "(\\/\\*svg\\*\\/)\\s*(`)",
+      "beginCaptures": {
+				"1": {
+          "name": "comment.block.js"
+        }
+      },
+      "end": "(`)",
+      "patterns": [
+        {
+          "include": "source.ts#template-substitution-element"
+        },
+        {
+          "include": "text.html.basic"
+        }
+      ]
+    },
+    {
+      "begin": "( html )\\s*(`)",
+      "beginCaptures": {
+				"1": {
+					"name": "keyword.operator.assignment.js"
+        }
+      },
+      "end": "(`)",
+      "patterns": [
+        {
+          "include": "source.ts#template-substitution-element"
+        },
+        {
+          "include": "text.html.basic"
+        }
+      ]
+    },
+    {
+      "begin": "( svg )\\s*(`)",
+      "beginCaptures": {
+				"1": {
+					"name": "keyword.operator.assignment.js"
+        }
+      },
+      "end": "(`)",
+      "patterns": [
+        {
+          "include": "source.ts#template-substitution-element"
+        },
+        {
+          "include": "text.html.basic"
+        }
+      ]
+    }
+  ],
+  "scopeName": "inline.template-literals"
+}

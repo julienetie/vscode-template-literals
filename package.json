@@ -3,8 +3,8 @@
     "name": "vscode-template-literals",
     "displayName": "Template Literals",
     "description": "Template Literals Syntax Highlighting for HTML and SVG (Without the need of a tag function)",
-    "version": "0.2.2",
-    "icon": "logo.png",
+    "version": "0.5.0",
+    "icon": "lambdascript.png",
     "scripts": {
         "publish": "vsce publish"
     },
@@ -40,42 +40,20 @@
         "grammars": [
             {
                 "injectTo": [
+                    "source.html",
                     "source.js",
                     "source.js.jsx",
                     "source.jsx",
                     "source.ts",
                     "source.tsx",
-                    "text.html.basic"
+                    "text.html"
                 ],
-                "scopeName": "inline.lit-html",
+                "scopeName": "inline.template-literals",
                 "path": "./syntaxes/template-literals.json",
                 "embeddedLanguages": {
                     "meta.embedded.block.html": "html"
                 }
-            },
-            {
-                "injectTo": [
-                    "source.js",
-                    "source.js.jsx",
-                    "source.jsx",
-                    "source.ts",
-                    "source.tsx",
-                    "text.html.basic"
-                ],
-                "scopeName": "inline.lit-html.string.injection",
-                "path": "./syntaxes/template-literals-string-injection.json",
-                "embeddedLanguages": {
-                    "meta.template.expression.ts": "typescript"
-                }
-            }
-        ],
-        "typescriptServerPlugins": [
-            {
-                "name": "typescript-lit-html-plugin"
             }
         ]
-    },
-    "dependencies": {
-        "typescript-lit-html-plugin": "0.9.0"
     }
 }
