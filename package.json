@@ -3,7 +3,7 @@
     "name": "vscode-template-literals",
     "displayName": "Template Literals",
     "description": "Template Literals Syntax Highlighting for HTML and SVG (Without the need of a tag function)",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "icon": "lambdascript.png",
     "scripts": {
         "publish": "vsce publish"
@@ -19,7 +19,7 @@
         "url": "https://github.com/julienetie/vscode-template-literals.git/issues"
     },
     "engines": {
-        "vscode": "^1.52.0"
+        "vscode": "^1.83.0"
     },
     "categories": [
         "Programming Languages"

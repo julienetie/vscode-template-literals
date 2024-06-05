@@ -1,4 +1,4 @@
-const someElement = ({value}) => `
+const arrowFunction = ({value}) => `
     <div class="some-class">
         <style>h1{color: lime;}</style>
         <h1>Hello World!</h1>
@@ -7,34 +7,34 @@ const someElement = ({value}) => `
     </div>
 `
 
-const someElement = `
+const assignment = `
     <div class="some-class">
-        <style>h1{color: lime;}</style>
+        <style>h1{color: blue;}</style>
         <h1>Hello World!</h1>
         <script>console.log('Hello World')</script>
         <div>${value}</div>
     </div>
 `
 
-const someElement = html `
+const tagFunction = anyTagFn `
     <div class="some-class">
-        <style>h1{color: lime;}</style>
+        <style>h1{color: pink;}</style>
         <h1>Hello World!</h1>
         <script>console.log('Hello World')</script>
         <div>${value}</div>
     </div>
 `
 
-const someElement = svg `
+const commentFollowedBySpace = /*any-comment*/ `
     <div class="some-class">
-        <style>h1{color: lime;}</style>
+        <style>h1{color: brown;}</style>
         <h1>Hello World!</h1>
         <script>console.log('Hello World')</script>
         <div>${value}</div>
     </div>
 `
 
-const someElement = /*html*/ `
+const disableWithCommentNoSpace = /**/`
     <div class="some-class">
         <style>h1{color: lime;}</style>
         <h1>Hello World!</h1>
@@ -42,12 +42,7 @@ const someElement = /*html*/ `
         <div>${value}</div>
     </div>
 `
+const disableInlineWithCommentNoSpace = /**/`<This is a regular string> ${abc}`
 
-const someElement = /*svg*/ `
-    <div class="some-class">
-        <style>h1{color: lime;}</style>
-        <h1>Hello World!</h1>
-        <script>console.log('Hello World')</script>
-        <div>${value}</div>
-    </div>
-`
+
+const regularTLString = `A string without markup will be the color of HTML text <> ${abc}`
