@@ -7,13 +7,13 @@
 
 Use this extension to highlight markup within template literals **without needing to specify a tag function**.
 
-![image](https://github.com/julienetie/vscode-template-literals/assets/7676299/262d78b3-4381-441c-9803-10fb5adfe340)
+![image](https://github.com/julienetie/vscode-template-literals/assets/7676299/5ccc12af-27ac-4b6f-b48a-406aca7150e9)
+
+
 
 
 ## Install
-Search for "template literals" in [VSCode extensions](https://marketplace.visualstudio.com/) and [install](https://code.visualstudio.com/learn/get-started/extensions).
-
-This plugin is based on the [leet-html](https://github.com/swindex/leet-html) by [Eldar Gerfanov](https://github.com/swindex)
+Search *Template Literals* by *julienetie* in [VSCode extensions](https://marketplace.visualstudio.com/) and [install](https://code.visualstudio.com/learn/get-started/extensions).
 
 ### ** Contributions are welcomed **
 
