@@ -46,3 +46,15 @@ const disableInlineWithCommentNoSpace = /**/`<This is a regular string> ${abc}`
 
 
 const regularTLString = `A string without markup will be the color of HTML text <> ${abc}`
+
+console.log(`<h1>Hello World!</h1>`)
+
+console.log( 
+    `<h1>Hello World!</h1>`
+)
+
+dotNotation[`<p>Test.</p>`]
+
+{
+    `<span>VSCode Template Literals</span>`
+}
